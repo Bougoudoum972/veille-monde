@@ -2,6 +2,10 @@
 
 L'actualité géopolitique, économique et transport du jour, réunie à partir d'une quarantaine de sources (Le Monde, RFI, Jeune Afrique, Revue Conflits, Politico, des flux transport aérien, routier et maritime…).
 
+**Web app :** https://bougoudoum972.github.io/veille-monde/
+
+📘 **Un souci ? Voir le [guide « Que faire si… »](GUIDE.md).**
+
 ## Contenu du dépôt
 
 | Dossier | Rôle |
