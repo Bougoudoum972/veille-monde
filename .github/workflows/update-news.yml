@@ -32,11 +32,16 @@ jobs:
         run: |
           git config user.name "veille-monde-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Repart de la dernière version en ligne : le news.json qu'on vient de générer
+          # est de toute façon le plus récent, inutile de fusionner.
+          cp docs/news.json "$RUNNER_TEMP/news.json"
+          git fetch origin main
+          git reset --hard origin/main
+          cp "$RUNNER_TEMP/news.json" docs/news.json
           git add docs/news.json
           if git diff --cached --quiet; then
             echo "Aucun changement."
           else
             git commit -m "Actualités du $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git pull --rebase
-            git push
+            git push origin HEAD:main
           fi
